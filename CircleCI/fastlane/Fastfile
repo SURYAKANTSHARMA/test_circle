@@ -27,7 +27,10 @@ end
 
 desc "Build binary"
   lane :build do 
-    codeSigning
+    #codeSigning
+    build_app(workspace: "CircleCI.xcworkspace", scheme: "CircleCI", configuration: "Debug", output_directory: "./Build", export_options: {
+      method: "ad-hoc"
+    })
 end
 
 
